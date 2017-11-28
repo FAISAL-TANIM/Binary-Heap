@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void maxHeapify(int arr[], int i, int n){
+void minHeapify(int arr[], int i, int n){
 	int left = 2*i+1;
 	int right = 2*i+2;
 	int largest = i;
@@ -13,13 +13,13 @@ void maxHeapify(int arr[], int i, int n){
 	}
 	if(largest != i){
 		swap(arr[i], arr[largest]);
-		maxHeapify(arr,largest,n);
+		minHeapify(arr,largest,n);
 	}
 }
 
-void convertMaxHeap(int arr[], int n){
+void convertMinHeap(int arr[], int n){
 	for(int i=n/2-1; i>=0; i--){
-		maxHeapify(arr,i,n);
+		minHeapify(arr,i,n);
 	}
 }
 
@@ -42,7 +42,7 @@ int main()
 	cout<<"min or ur entered heap array: ";
 	printArray(arr,n);
 	cout<<endl;
-	convertMaxHeap(arr,n);
+	convertMinHeap(arr,n);
 	cout<<"max heap is: ";
 	printArray(arr,n);
 	cout<<endl;
