@@ -1,27 +1,29 @@
 # Binary-Heap
-Heap sorting, maximum build up, minimum build up
+maximum heap build up 
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
-void minHeapify(int arr[], int i, int n){
+void maxHeapify(int arr[], int i, int n){
 	int left = 2*i+1;
 	int right = 2*i+2;
 	int largest = i;
-	if(left<n && arr[left]<arr[largest]){
+	if(left<n && arr[left]>arr[largest]){
 		largest = left;
 	}
-	if(right<n && arr[right]<arr[largest]){
+	if(right<n && arr[right]>arr[largest]){
 		largest = right;
 	}
 	if(largest != i){
 		swap(arr[i], arr[largest]);
-		minHeapify(arr,largest,n);
+		maxHeapify(arr,largest,n);
 	}
 }
 
-void convertMinHeap(int arr[], int n){
+void convertMaxHeap(int arr[], int n){
 	for(int i=n/2-1; i>=0; i--){
-		minHeapify(arr,i,n);
+		maxHeapify(arr,i,n);
 	}
 }
 
@@ -44,7 +46,7 @@ int main()
 	cout<<"min or ur entered heap array: ";
 	printArray(arr,n);
 	cout<<endl;
-	convertMinHeap(arr,n);
+	convertMaxHeap(arr,n);
 	cout<<"max heap is: ";
 	printArray(arr,n);
 	cout<<endl;
