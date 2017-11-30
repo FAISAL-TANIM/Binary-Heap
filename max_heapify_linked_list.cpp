@@ -31,9 +31,9 @@ maxHeapify *insert(maxHeapify *root, int data){
 	}
 	else{
 		if(count%2==0)
-			root->right = insert(root->right,data);
-		else
 			root->left = insert(root->left,data);
+		else
+			root->right = insert(root->right,data);
 	}
 	count++;
 	return root;
