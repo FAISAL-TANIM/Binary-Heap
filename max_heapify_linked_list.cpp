@@ -34,8 +34,8 @@ maxHeapify *insert(maxHeapify *root, int data){
 			root->left = insert(root->left,data);
 		else
 			root->right = insert(root->right,data);
+		count++;
 	}
-	count++;
 	return root;
 }
 
