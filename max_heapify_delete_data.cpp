@@ -31,7 +31,7 @@ void printArray(int *arr, int n){
 		cout<<arr[i]<<" ";
 	}
 }
-void search(int arr[],int &n,int num){
+void delete(int arr[],int &n,int num){
 	for(int i=0;i<n;i++){
 		if(num == arr[i]){
 			arr[i] = INT_MAX;
@@ -62,6 +62,6 @@ int main()
 	cout<<endl;
 	int num;
 	cin>>num;
-	search(arr,n,num);
+	delete(arr,n,num);
 	cout<<endl<<n;
 }
